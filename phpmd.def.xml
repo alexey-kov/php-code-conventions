@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<ruleset name="KnSCodeConv"
+         xmlns="http://pmd.sf.net/ruleset/1.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://pmd.sf.net/ruleset/1.0.0
+                     http://pmd.sf.net/ruleset_xml_schema.xsd"
+         xsi:noNamespaceSchemaLocation="
+                     http://pmd.sf.net/ruleset_xml_schema.xsd">
+    <description>
+        Custom ruleset developed by Kovalenko & son in accordance with Coding Style described here: https://github.com/alexey-kov/php-code-conventions
+    </description>
+    
+    <rule ref="rulesets/cleancode.xml">
+        <!-- BooleanArgumentFlag:used as of 8.4 -->
+        <!-- ElseExpression: not used -->
+        <exclude name="ElseExpression" />
+        <!-- StaticAccess: not used -->
+        <exclude name="StaticAccess" />
+    </rule>
+    <rule ref="rulesets/codesize.xml" />
+    <!-- CyclomaticComplexity -->
+    <rule ref="rulesets/controversial.xml" />
+    <rule ref="rulesets/controversial.xml/ExcessiveMethodLength">
+        <properties>
+            <property name="ignore-whitespace" value="true" />
+        </properties>
+    </rule>
+    <rule ref="rulesets/controversial.xml/ExcessiveClassLength">
+        <properties>
+            <property name="ignore-whitespace" value="true" />
+        </properties>
+    </rule>
+    <rule ref="rulesets/design.xml" />
+    <rule ref="rulesets/naming.xml" />
+    <rule ref="rulesets/unusedcode.xml" />
+</ruleset>
